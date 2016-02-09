@@ -1,12 +1,20 @@
 # wang.js
-wang.js is just a simple javascript file including handy functions wrapped by me(Jelly Wang).
+wang.js is just a simple javascript file including handy functions wrapped by me(Jelly Wang) personally.  
+
+>Just for Fun.
+
 ##Dependence
 ###jQuery
-You must import `jQuery` library in front of `wang.js`.  
+You must import `jQuery` library in front of importing `wang.js`.  
 For example:
 ```html
 <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 ```
+##Usage
+There are two approaches to use this repository. One is downloading it and importing it in your project directly, the other is importing it via an online url as follow:
+```html
+<script src="http://rawgit.com/guodongxiaren/wang.js/master/wang.js"></script>
+```  
 ##API list
 |function|description
 |-----|----|
