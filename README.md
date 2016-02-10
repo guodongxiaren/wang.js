@@ -19,7 +19,7 @@ For example:
 ##License
 **The MIT License**  
 
-If you want to know detail about this license, you can read [The MIT License](./License) file. 
+If you want to know detail about this license, you can read [The MIT License](./LICENSE) file. 
 
 ##API list
 |function|description
