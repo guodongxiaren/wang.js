@@ -58,7 +58,6 @@ function lightPat(selector) {
 		var html = pattern; 
 		for (var arr in ob) {
 			var item = "{{" + arr + "}}";
-			console.warn(item);
 			var re = new RegExp(item, "g");
 			html = html.replace(re, ob[arr]);
 		}
