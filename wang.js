@@ -39,7 +39,12 @@ function uniqueArray(array) {
 }
 
 function lightPat(selector) {
-	var pattern = $(selector).prop('outerHTML');
+	var dom = $(selector);
+	if (dom.length == 0) {
+		throw "selector: " + selector + " don't match any DOM node!";
+	}
+ 
+	var pattern = dom.prop('outerHTML');
 	var re = /{{\w+}}/gm;
 	var array = uniqueArray(pattern.match(re));
 
