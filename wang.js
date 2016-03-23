@@ -39,20 +39,25 @@ function uniqueArray(array) {
 }
 
 function lightPat(selector) {
-	var html = $(selector).prop('outerHTML');
+	var pattern = $(selector).prop('outerHTML');
 	var re = /{{\w+}}/gm;
-	var arr = uniqueArray(html.match(re));
+	var array = uniqueArray(pattern.match(re));
 
 	return function () {
 		if (arguments.length == 0)
 			return;
 		var ob = arguments[0];
-		var length = arr.length;
-		for (var i = 0; i < length; i++) {
-			var item = arr[i].substring(2, arr[i].length-2);
-			var re = new RegExp(arr[i], "g");
-			html = html.replace(re, ob[item]);
+		/* prevent closure 
+		 * copy pattern object rather than process it directly
+		 */
+		var html = pattern; 
+		for (var arr in ob) {
+			var item = "{{" + arr + "}}";
+			console.warn(item);
+			var re = new RegExp(item, "g");
+			html = html.replace(re, ob[arr]);
 		}
+
 		if (arguments.length == 1)
 			return html;
 		else if (arguments.length == 2)
