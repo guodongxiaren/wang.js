@@ -15,12 +15,6 @@ For example:
 ```html
 <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 ```
-
-##License
-**The MIT License**  
-
-If you want to know detail about this license, you can read [The MIT License](./LICENSE) file. 
-
 ##API list
 |function|description
 |-----|----|
@@ -28,7 +22,7 @@ If you want to know detail about this license, you can read [The MIT License](./
 |checkMail|check whether a valid email address or not
 |checkMobile|check whether a valid mobile phone number or not
 |uniqueArray|make an JS Array unique
-|lightPat|a light weight pattern engine, see bellow [lightPat](#lightPat)
+|lightPat|a light weight pattern engine, see bellow [lightPat](#lightpat)
 
 ##API detail<kbd>some</kbd>
 ###lightPat
@@ -55,7 +49,7 @@ var pe = lightPat(".pat");
 you get a function object(pe in the above code) returned from the `lightPat` function at the moment.   
 >The `lightPat` support all selector syntax in the jQuery.  
 
-**Now**, you need an another object, for example:
+**Next**, you need an another object, for example:
 ```javascript
 var ob = {
 	"title": "light pattern engine",
@@ -74,3 +68,17 @@ pe(ob, function(src) {
 	document.getElementById("main").innerHTML = src;
 });
 ```
+**Now**, your HTML page in your browser will be:
+```html
+<div id="main">
+	<div class="pat">
+		<h2>light pattern engine</h2>
+		<label>2016-03-23</label>
+	</div>
+</div>
+```
+
+##License
+**The MIT License**  
+
+If you want to know detail about this license, you can read [The MIT License](./LICENSE) file. 
