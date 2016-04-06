@@ -8,8 +8,8 @@ There are two approaches to use this repository. One is downloading it and impor
 ```html
 <script src="http://rawgit.com/guodongxiaren/wang.js/master/wang.js"></script>
 ```  
-##Dependence
-###jQuery
+###Dependence
+####jQuery
 You must import `jQuery` library in front of importing `wang.js`.  
 For example:
 ```html
@@ -27,6 +27,7 @@ For example:
 
 ##API detail<kbd>some</kbd>
 ###isChinese
+check whether an valid Chinese character or not
 ####Usage
 for example:
 ```javascript
@@ -34,7 +35,7 @@ var text = ...;
 var flag = isChinese(text); 
 ```
 and you have second usage:
-```javascirpt
+```javascript
 var flag = isChinese(text, true);
 ```
 in the second usage, wideChar("全角字符" in Chinese) will return `true`.
