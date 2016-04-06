@@ -7,24 +7,25 @@ function getNow2Str() {
 	return fulltime;
 }
 
-function checkMail(mail) {
+function isEmail(text) {
 	var filter  = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-	if (filter.test(mail)) {
-		return true;	
-	} else {
-		return false;
-	} 
-
+	return filter.test(text);
 }
 
-function checkMobile(phone) {
+function isMobile(text) {
 	var filter = /^1\d{10}$/;
-	if (filter.test(phone)) {
-		return true;
-	} else {
-		return false;
-	}
+	return filter.test(text);
 }
+
+function isChinese(text, wideChar=false) {
+	if (wideChar) {
+		var filter = /^[\u4E00-\u9FA5\uFE30-\uFFA0]+$/;
+	} else {
+		var filter = /^[\u4E00-\u9FA5]+$/;
+	}
+	return filter.test(text);
+}
+
 
 function uniqueArray(array) {
 	array.sort();
@@ -43,7 +44,7 @@ function lightPat(selector) {
 	if (dom.length == 0) {
 		throw "selector: " + selector + " don't match any DOM node!";
 	}
- 
+	
 	var pattern = dom.prop('outerHTML');
 	var re = /{{\w+}}/gm;
 	var array = uniqueArray(pattern.match(re));
@@ -55,16 +56,16 @@ function lightPat(selector) {
 		/* prevent closure 
 		 * copy pattern object rather than process it directly
 		 */
-		var html = pattern; 
-		for (var arr in ob) {
-			var item = "{{" + arr + "}}";
-			var re = new RegExp(item, "g");
-			html = html.replace(re, ob[arr]);
-		}
+		 var html = pattern; 
+		 for (var arr in ob) {
+		 	var item = "{{" + arr + "}}";
+		 	var re = new RegExp(item, "g");
+		 	html = html.replace(re, ob[arr]);
+		 }
 
-		if (arguments.length == 1)
-			return html;
-		else if (arguments.length == 2)
-			arguments[1](html);
-	}
-};
+		 if (arguments.length == 1)
+		 	return html;
+		 else if (arguments.length == 2)
+		 	arguments[1](html);
+		}
+	};

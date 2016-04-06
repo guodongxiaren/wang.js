@@ -19,12 +19,26 @@ For example:
 |function|description
 |-----|----|
 |getNow2Str|get now time, such as `2016-2-9 21:16:00`
-|checkMail|check whether a valid email address or not
-|checkMobile|check whether a valid mobile phone number or not
+|isEmail|check whether an valid email address or not
+|isMobile|check whether an valid mobile phone number or not
+|[isChinese](#ischinese)|check whether an valid Chinese character or not
 |uniqueArray|make an JS Array unique
-|lightPat|a light weight pattern engine, see bellow [lightPat](#lightpat)
+|[lightPat](#lightpat)|a light weight pattern engine, see bellow 
 
 ##API detail<kbd>some</kbd>
+###isChinese
+####Usage
+for example:
+```javascript
+var text = ...;
+var flag = isChinese(text); 
+```
+and you have second usage:
+```javascirpt
+var flag = isChinese(text, true);
+```
+in the second usage, wideChar("全角字符" in Chinese) will return `true`.
+
 ###lightPat
 a light weight pattern engine
 ####Dependence
@@ -59,11 +73,17 @@ var ob = {
 the name of object attribute should be same as that of the above pattern variable.  
 **Finally**, you have two way to use this function object, as follows:
 ```javascript
-// The First
+// The First with jQuery
+$("main").html(pe(ob));
+// raw js
 document.getElementById("main").innerHTML = pe(ob);
 ```
 ```javascript
-// The Second
+// The Second with jQuery
+pe(ob, function(src) {
+	$("main").html(src);
+});
+// raw js
 pe(ob, function(src) {
 	document.getElementById("main").innerHTML = src;
 });
