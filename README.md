@@ -3,19 +3,19 @@ wang.js is just a simple javascript file including handy functions wrapped by me
 
 >Just for Fun.
 
-##Usage
+## Usage
 There are two approaches to use this repository. One is downloading it and importing it in your project directly, the other is importing it via an online url as follow:
 ```html
 <script src="http://rawgit.com/guodongxiaren/wang.js/master/wang.js"></script>
 ```  
-###Dependence
-####jQuery
+### Dependence
+#### jQuery
 You must import `jQuery` library in front of importing `wang.js`.  
 For example:
 ```html
 <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 ```
-##API list
+## API list
 |function|description
 |-----|----|
 |getNow2Str|get now time, such as `2016-2-9 21:16:00`
@@ -25,10 +25,10 @@ For example:
 |uniqueArray|make an JS Array unique
 |[lightPat](#lightpat)|a light weight pattern engine, see bellow 
 
-##API detail<kbd>some</kbd>
-###isChinese
+## API detail<kbd>some</kbd>
+### isChinese
 check whether an valid Chinese character or not
-####Usage
+#### Usage
 for example:
 ```javascript
 var text = ...;
@@ -40,13 +40,13 @@ var flag = isChinese(text, true);
 ```
 in the second usage, wideChar("全角字符" in Chinese) will return `true`.
 
-###lightPat
+### lightPat
 a light weight pattern engine
-####Dependence
+#### Dependence
 - jQuery
 - `uniqueArray` in wang.js
 
-####Usage
+#### Usage
 **First**, there should be some `pattern style code` in your HTML, as follow:
 ```html
 <div id="main">
@@ -99,7 +99,7 @@ pe(ob, function(src) {
 </div>
 ```
 
-##License
+## License
 **The MIT License**  
 
 If you want to know detail about this license, you can read [The MIT License](./LICENSE) file. 
